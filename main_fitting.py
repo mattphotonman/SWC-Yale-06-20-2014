@@ -2,6 +2,7 @@
 Main script for fitting a sine wave.
 """
 import fitting_sine_wave as fsw
+import numpy as np
 from scipy import optimize
 
 x, y = fsw.generate_data(1.,1.,0.01)
