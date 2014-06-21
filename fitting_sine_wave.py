@@ -19,7 +19,7 @@ def generate_data(Amp, freq, noise_amp):
     y += noise_amp * np.random.randn(len(y))
     return x, y
 
-def plot_data(x, y, Amp, freq):
+def plot_data(x, y, Amp, freq, filename):
     """
     Plot the actual data point x, y, along with
     the fit curve Amp * sin(freq * x).
@@ -27,6 +27,7 @@ def plot_data(x, y, Amp, freq):
     plb.plot(x, y, 'b', linestyle = ':')
     y_fit = Amp * np.sin(freq * x)
     plb.plot(x, y_fit, 'r')
+    plb.savefig(filename)
 
 def fit_data(x, y, fmin_method, init_guess = np.array([0.,0.])):
     """
